@@ -9,29 +9,26 @@ const WORDS = [
     "COMMITTEE", 
     "TATTOO",
     "ELECTRICITY",
-    "Word 2",
-    "Word 3",
-    "Word 4",
-    "Word 5",
-    "Word 6",
-    "Word 7",
-    "Word 8",
-    "Word 9",
-    "Word 10"
+    "DEBUGGING",
+    "LOGIC ERROR",
+    "ALGORITHMS",
+    "CROWDSOURCING",
+    "NETWORK",
+    "PARADIGM",
+    "COMPILING"
 ];
 /** Parallel array to WORDS for their definitions */
 const DEFINITIONS = [
     "A group of people appointed for a specific function, typically consisting of members of a larger group", 
     "A form of body modification where a design is made by inserting ink", 
-    "is the set of physical phenomena associated with the presence and motion of electric charge",
-    "Definition 2", 
-    "Definition 4",
-    "Definition 5",
-    "Definition 6",
-    "Definition 7",
-    "Definition 8",
-    "Definition 9",
-    "Definition 10"
+    "Is the set of physical phenomena associated with the presence and motion of electric charge",
+    "Process of finding and removing errors from a program's source code",
+    "A bug in a program that causes it to operate incorrectly, but not to terminate abnormally (or crash)",
+    "A process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer",
+    "To obtain (information or input into a particular task or project) by enlisting the services of a large number of people",
+    "Allows your computer to connect to other computers around the world",
+    "A way of thinking or a way of doing something",
+    "Process of translating source code within a source file from higher-level language into lower-level language"
 ];
 /** Letters of the alphabet */
 const ALPHABET = [
@@ -62,12 +59,10 @@ let buttons = [];
 //======================//
 
 /** Creates a button */
-function Button() {
-    for (let i = 0; i < ALPHABET.length; i++) {
-        document.getElementById("keyboard").innerHTML += "<button>" + Button[i] + "</button>";
-    }
-    
-}Button();
+function button() {
+ 
+
+}
 
 
 //======================//
