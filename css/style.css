@@ -1,3 +1,19 @@
 #gameName{
     text-align: center;
 }
+
+#wrongGuesses{
+    text-align: center;
+}
+
+#hangmanImage{
+    text-align: center;
+}
+
+#correctGuess{
+    text-align: center;
+}
+
+#wordHint{
+    text-align: center;
+}

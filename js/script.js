@@ -63,8 +63,11 @@ let buttons = [];
 
 /** Creates a button */
 function Button() {
-
-}
+    for (let i = 0; i < ALPHABET.length; i++) {
+        document.getElementById("keyboard").innerHTML += "<button>" + Button[i] + "</button>";
+    }
+    
+}Button();
 
 
 //======================//
@@ -76,3 +79,5 @@ function randomWord () {
     wordChoice = WORDS[Math.floor(Math.random() * WORDS.length)];
     
 }
+
+
