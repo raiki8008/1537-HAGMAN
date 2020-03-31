@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>COMP 1537 - Hangman Project</title>
+        <meta name="comp1800 boilerplate code" content="my bcit project">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
         <link href="css/style.css" type="text/css" rel="stylesheet">
     </head>
 
     <body>
-        <h1 id="gameName">Hangman Game!</h1>    
-        <p id="wrongGuesses"> Wrong Guesses: <span id="mistakes">0</span> / <span> 7 </span></p>
-        <p id="hangmanImage">Image of hangman.</p>
-        <p id="correctGuess"> Guess list of user letters that are correct</p>
-        <P id="wordHint"></P>
-        <div id="keyboard"></div>
-        <button id="reset">Reset</button>
+        <div class="container">
+            <div class="text-center" id="gameName">Hangman Game!</div>    
+            <div class="text-center"> 
+                <p> Please help our hangman out! Guess the word!</p> 
+                <P id="wordHint"> This is the text hint for the word </P>  
+            </div>
+            <div class="float-left" id="wrongGuesses"> Wrong Guesses: <span id="mistakes">0</span> / <span> 7 </span></div>
+            <div class="text-center" id="hangmanImage">Image of hangman.</div>
+            <div class="text-center">
+                <div id="keyboard"></div>
+            </div>
+            <div class="text-center">
+                <button id="reset">Reset</button>
+            </div>
+            <div class="float-right">
+                <button id="endGame"> End Game</button>
+            </div>
+            
+        
+        </div>
         
 
 

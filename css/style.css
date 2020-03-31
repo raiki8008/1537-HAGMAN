@@ -1,19 +1,19 @@
 #gameName{
-    text-align: center;
+    color: blue;
 }
 
 #wrongGuesses{
-    text-align: center;
+    color: blue;
 }
 
 #hangmanImage{
-    text-align: center;
+    color: blue;
 }
 
 #correctGuess{
-    text-align: center;
+    color: blue;
 }
 
 #wordHint{
-    text-align: center;
+    color: blue;
 }
