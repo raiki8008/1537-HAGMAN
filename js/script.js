@@ -36,6 +36,10 @@ const ALPHABET = [
     "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
 ]
 
+/** Keyboard button dimensions */
+const KEY_HEIGHT = 60;
+const KEY_WIDTH = 60;
+
 //======================//
 // Global Variables     //
 //======================//
@@ -59,10 +63,28 @@ let buttons = [];
 //======================//
 
 /** Creates a button */
-function button() {
- 
-
+function createButtons() {
+    for (let i = 0; i < ALPHABET.length; i++) {
+        let key = new Button(ALPHABET[i]);
+    }
 }
+
+// Button constructor
+function Button(letter) {
+    this.letter = letter;
+    this.btn = document.createElement("button");
+    this.btn.style.width = KEY_WIDTH + "px";
+    this.btn.style.height = KEY_HEIGHT+ "px";
+    this.btn.style.position = "absolute";
+    document.body.appendChild(this.btn);
+
+    this.setLocation = function (top, left) {
+        this.btn.style.top = top;
+        this.btn.style.left = left;
+    };
+    // initialize on page
+    this.setLocation(top, left);
+};
 
 
 //======================//
@@ -75,4 +97,7 @@ function randomWord () {
     
 }
 
-
+//======================//
+// Main                 //
+//======================//
+createButtons();
