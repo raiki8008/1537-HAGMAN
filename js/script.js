@@ -48,6 +48,8 @@ const WIDTH = 60;
 let wordChoice = "";
 /** The starting number of user mistakes. */
 let mistakes = 0;
+/** The number of guesses. */
+let guesses = 0;
 /** An array of guessed letters. */
 let guessedLetters = [];
 
@@ -62,15 +64,8 @@ let buttons = [];
 // Constructors         //
 //======================//
 
-// Generate Keyboard keys
-function createButtons() {
-    for (let i = 0; i < ALPHABET.length; i++) {
-        buttons.push(new Button(ALPHABET[i]));
-    }
-}
-
 // Button Constructor
-function Button(letter, clicked) {
+function Button(letter) {
     this.letter = letter;
     this.clicked = false;
     this.btn = document.createElement("button");
@@ -78,7 +73,10 @@ function Button(letter, clicked) {
     this.btn.style.width = WIDTH;
     this.btn.style.height = HEIGHT;
     document.body.appendChild(this.btn);
-};
+    
+    // click handlers
+    this.btn.onclick = checkLetter(letter);
+}
 
 
 //======================//
@@ -88,11 +86,51 @@ function Button(letter, clicked) {
 /** Generates a random word from the array of words. */
 function randomWord() {
     wordChoice = WORDS[Math.floor(Math.random() * WORDS.length)];
+    console.log(wordChoice);
 }
 
+/** Checks whether the clicked letter exists in the word. */
+function checkLetter(letter) {
+    return function () {
+        if (!wordChoice.includes(letter)) {
+            incMistakes();
+            incHangman();
+            guessedLetters.push(letter);
+            return alert("Wrong!");
+        } else {
+            revealLetter(letter);
+            guessedLetters.push(letter);
+            return alert("Correct!");
+        }
+    }
+}
+
+
+/** Creates buttons */
+function createButtons() {
+    for (let i = 0; i < ALPHABET.length; i++) {
+        buttons.push(new Button(ALPHABET[i]));
+    }
+}
+
+/** Adds a body part to the hangman */
+function incHangman() {
+    // TODO
+}
+
+/** Increments user mistakes by 1 */
+function incMistakes() {
+    mistakes++;
+}
+
+/** Reveals a letter of the word */
+function revealLetter(letter) {
+    // TODO
+}
 
 
 //======================//
 // Main()               //
 //======================//
 createButtons();
+randomWord();
