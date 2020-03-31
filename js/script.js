@@ -67,6 +67,8 @@ function createButtons() {
     for (let i = 0; i < ALPHABET.length; i++) {
         let key = new Button(ALPHABET[i]);
     }
+
+    
 }
 
 // Button constructor
@@ -76,7 +78,7 @@ function Button(letter) {
     this.btn.style.width = KEY_WIDTH + "px";
     this.btn.style.height = KEY_HEIGHT+ "px";
     this.btn.style.position = "absolute";
-    document.body.appendChild(this.btn);
+
 
     this.setLocation = function (top, left) {
         this.btn.style.top = top;
