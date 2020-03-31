@@ -6,7 +6,7 @@
 const MAX_TRIES = 7;
 /** Array of words to guess */
 const WORDS = [
-    "COMMITTEE", 
+    "COMMITTEE",
     "TATTOO",
     "ELECTRICITY",
     "DEBUGGING",
@@ -19,8 +19,8 @@ const WORDS = [
 ];
 /** Parallel array to WORDS for their definitions */
 const DEFINITIONS = [
-    "A group of people appointed for a specific function, typically consisting of members of a larger group", 
-    "A form of body modification where a design is made by inserting ink", 
+    "A group of people appointed for a specific function, typically consisting of members of a larger group",
+    "A form of body modification where a design is made by inserting ink",
     "Is the set of physical phenomena associated with the presence and motion of electric charge",
     "Process of finding and removing errors from a program's source code",
     "A bug in a program that causes it to operate incorrectly, but not to terminate abnormally (or crash)",
@@ -37,8 +37,8 @@ const ALPHABET = [
 ]
 
 /** Keyboard button dimensions */
-const KEY_HEIGHT = 60;
-const KEY_WIDTH = 60;
+const HEIGHT = 60;
+const WIDTH = 60;
 
 //======================//
 // Global Variables     //
@@ -62,30 +62,22 @@ let buttons = [];
 // Constructors         //
 //======================//
 
-/** Creates a button */
+// Generate Keyboard keys
 function createButtons() {
     for (let i = 0; i < ALPHABET.length; i++) {
-        let key = new Button(ALPHABET[i]);
+        buttons.push(new Button(ALPHABET[i]));
     }
-
-    
 }
 
-// Button constructor
-function Button(letter) {
+// Button Constructor
+function Button(letter, clicked) {
     this.letter = letter;
+    this.clicked = false;
     this.btn = document.createElement("button");
-    this.btn.style.width = KEY_WIDTH + "px";
-    this.btn.style.height = KEY_HEIGHT+ "px";
-    this.btn.style.position = "absolute";
-
-
-    this.setLocation = function (top, left) {
-        this.btn.style.top = top;
-        this.btn.style.left = left;
-    };
-    // initialize on page
-    this.setLocation(top, left);
+    this.btn.innerHTML = letter;
+    this.btn.style.width = WIDTH;
+    this.btn.style.height = HEIGHT;
+    document.body.appendChild(this.btn);
 };
 
 
@@ -94,12 +86,13 @@ function Button(letter) {
 //======================//
 
 /** Generates a random word from the array of words. */
-function randomWord () {
+function randomWord() {
     wordChoice = WORDS[Math.floor(Math.random() * WORDS.length)];
-    
 }
 
+
+
 //======================//
-// Main                 //
+// Main()               //
 //======================//
 createButtons();
