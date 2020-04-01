@@ -75,14 +75,15 @@ function Button(letter) {
 
     // random styling to make the keys look nicer
     this.btn.style.border = "1px solid black";
-    this.btn.style.padding = "15px 32px";
+    this.btn.style.float = "left";
+    this.btn.style.padding = "10px 10px";
     this.btn.style.textAlign = "center"
     this.btn.style.textDecoration = "none";
     this.btn.style.display = "inline-block";
     this.btn.style.fontSize = "16px";
 
-
-    document.body.appendChild(this.btn);
+    // TODO: fix keyboard so that it doesnt just append vertically
+    document.getElementById("keyboard").appendChild(this.btn);
 
     // TODO: implement function so that the clicked button is unclickable after being clicked
 
