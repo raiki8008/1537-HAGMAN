@@ -67,15 +67,17 @@ let buttons = [];
 // Button Constructor
 function Button(letter) {
     this.letter = letter;
-    this.clicked = false;
+    this.isClicked = false;
     this.btn = document.createElement("button");
     this.btn.innerHTML = letter;
     this.btn.style.width = WIDTH;
     this.btn.style.height = HEIGHT;
     document.body.appendChild(this.btn);
-    
-    // click handlers
-    this.btn.onclick = checkLetter(letter);
+
+    // TODO: implement function so that the clicked button blacks out and is unclickable after being clicked
+
+    // click handler
+    this.btn.onclick = checkLetter(this.btn, letter);
 }
 
 
@@ -86,27 +88,29 @@ function Button(letter) {
 /** Generates a random word from the array of words. */
 function randomWord() {
     wordChoice = WORDS[Math.floor(Math.random() * WORDS.length)];
-    console.log(wordChoice);
+    // TODO: remove the line below
+    console.log(wordChoice); // for TESTING
 }
 
 /** Checks whether the clicked letter exists in the word. */
-function checkLetter(letter) {
+function checkLetter(button, letter) {
     return function () {
-        if (!wordChoice.includes(letter)) {
+        button.style.backgroundColor = "black";
+        if (!wordChoice.includes(letter)) { // if letter does not exist in word
             incMistakes();
             incHangman();
             guessedLetters.push(letter);
             return alert("Wrong!");
-        } else {
+        } else { // letter does exist in word
             revealLetter(letter);
             guessedLetters.push(letter);
+            // TODO: check if whole word has been guessed, if so, call win() else,
             return alert("Correct!");
         }
     }
 }
 
-
-/** Creates buttons */
+/** Creates the 26 buttons for the keyboard */
 function createButtons() {
     for (let i = 0; i < ALPHABET.length; i++) {
         buttons.push(new Button(ALPHABET[i]));
@@ -115,17 +119,41 @@ function createButtons() {
 
 /** Adds a body part to the hangman */
 function incHangman() {
-    // TODO
+    // TODO: implement
 }
 
-/** Increments user mistakes by 1 */
+/** Increments user mistakes by 1 and calls gameOver if tries reach 7 */
 function incMistakes() {
     mistakes++;
+    if (mistakes === MAX_TRIES) {
+        gameOver();
+    }
 }
 
-/** Reveals a letter of the word */
+/** check if the word has been guessed */
+function isGuessed() {
+    // TODO: imple
+}
+
+/** Reveals a letter of the random word (user guess correct) */
 function revealLetter(letter) {
-    // TODO
+    // TODO: implement
+}
+
+/** ends the game and displays message to user */
+function gameOver() {
+    alert("GAME OVER. OUT OF TRIES.")
+}
+
+/** ends the game and displays message to user */
+function win() {
+    // TODO: HAGman
+    alert("Congratulations! You saved HAGman!");
+}
+
+/** resets the game */
+function reset() {
+    location.reload();
 }
 
 
