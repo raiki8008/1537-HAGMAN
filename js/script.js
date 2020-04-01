@@ -72,6 +72,16 @@ function Button(letter) {
     this.btn.innerHTML = letter;
     this.btn.style.width = WIDTH;
     this.btn.style.height = HEIGHT;
+
+    // random styling to make the keys look nicer
+    this.btn.style.border = "1px solid black";
+    this.btn.style.padding = "15px 32px";
+    this.btn.style.textAlign = "center"
+    this.btn.style.textDecoration = "none";
+    this.btn.style.display = "inline-block";
+    this.btn.style.fontSize = "16px";
+
+
     document.body.appendChild(this.btn);
 
     // TODO: implement function so that the clicked button is unclickable after being clicked
