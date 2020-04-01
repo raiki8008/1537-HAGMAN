@@ -35,6 +35,8 @@ const ALPHABET = [
     "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
     "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
 ]
+/** Sprite width */
+const SPRITE_WIDTH = 60;
 
 /** Keyboard button dimensions */
 const HEIGHT = 60;
@@ -52,6 +54,8 @@ let mistakes = 0;
 let guesses = 0;
 /** An array of guessed letters. */
 let guessedLetters = [];
+/** Current sprite left position */
+let spriteCurrent = 60;
 
 //======================//
 // HTML DOM Elements    //
@@ -143,7 +147,9 @@ function createButtons() {
 function incHangman() {
     let hangmanImage = document.getElementById("hangmanImage");
 
+    spriteCurrent -= SPRITE_WIDTH;
 
+    hangmanImage.style.background = "url(/images/Spritesheet.png) " + spriteCurrent + "px 0";
 }
 
 /** Increments user mistakes by 1 and calls gameOver if tries reach 7 */
