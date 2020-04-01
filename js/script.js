@@ -85,11 +85,8 @@ function Button(letter) {
     // TODO: fix keyboard so that it doesnt just append vertically
     document.getElementById("keyboard").appendChild(this.btn);
 
-    // TODO: implement function so that the clicked button is unclickable after being clicked
-
     // click handler
     this.btn.onclick = checkLetter(this.btn, letter);
-
 }
 
 
@@ -99,7 +96,12 @@ function Button(letter) {
 
 /** Generates a random word from the array of words. */
 function randomWord() {
-    wordChoice = WORDS[Math.floor(Math.random() * WORDS.length)];
+    let wordHint = document.getElementById("wordHint");
+    let randomWord = Math.floor(Math.random() * WORDS.length);
+    
+    wordChoice = WORDS[randomWord];
+    wordHint.innerHTML = DEFINITIONS[randomWord];
+
     // TODO: remove the line below
     console.log(wordChoice); // for TESTING
 }
@@ -111,6 +113,7 @@ function checkLetter(button, letter) {
         button.style.backgroundColor = "black";
         button.isClicked = true;
         guesses++;
+
         if (!wordChoice.includes(letter)) { // if letter does not exist in word
             incMistakes();
             incHangman();
@@ -119,6 +122,7 @@ function checkLetter(button, letter) {
         } else { // letter does exist in word
             revealLetter(letter);
             guessedLetters.push(letter);
+
             if (isGuessed(wordChoice, guessedLetters)) {
                 win();
             } else {
@@ -137,12 +141,18 @@ function createButtons() {
 
 /** Adds a body part to the hangman */
 function incHangman() {
-    // TODO: implement
+    let hangmanImage = document.getElementById("hangmanImage");
+
+
 }
 
 /** Increments user mistakes by 1 and calls gameOver if tries reach 7 */
 function incMistakes() {
+    let mistakesText = document.getElementById("mistakes");
+
     mistakes++;
+
+    mistakesText.innerHTML = mistakes + "/7";
     if (mistakes === MAX_TRIES) {
         gameOver();
     }
