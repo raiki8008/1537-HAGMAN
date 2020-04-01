@@ -74,10 +74,11 @@ function Button(letter) {
     this.btn.style.height = HEIGHT;
     document.body.appendChild(this.btn);
 
-    // TODO: implement function so that the clicked button blacks out and is unclickable after being clicked
+    // TODO: implement function so that the clicked button is unclickable after being clicked
 
     // click handler
     this.btn.onclick = checkLetter(this.btn, letter);
+
 }
 
 
@@ -96,6 +97,7 @@ function randomWord() {
 function checkLetter(button, letter) {
     return function () {
         button.style.backgroundColor = "black";
+        button.isClicked = true;
         if (!wordChoice.includes(letter)) { // if letter does not exist in word
             incMistakes();
             incHangman();
@@ -104,8 +106,11 @@ function checkLetter(button, letter) {
         } else { // letter does exist in word
             revealLetter(letter);
             guessedLetters.push(letter);
-            // TODO: check if whole word has been guessed, if so, call win() else,
-            return alert("Correct!");
+            if (isGuessed(wordChoice, guessedLetters)) {
+                win();
+            } else {
+                return alert("Correct!");
+            }
         }
     }
 }
@@ -131,11 +136,16 @@ function incMistakes() {
 }
 
 /** check if the word has been guessed */
-function isGuessed() {
-    // TODO: imple
+function isGuessed(word, guesses) {
+    for (let i = 0; i < word.length; i++) {
+        if (!guessedLetters.includes(word.charAt(i))) {
+            return false;
+        }
+    }
+    return true;
 }
 
-/** Reveals a letter of the random word (user guess correct) */
+/** Reveals a letter of the random word (user guessed correct) */
 function revealLetter(letter) {
     // TODO: implement
 }
