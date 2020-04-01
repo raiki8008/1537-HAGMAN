@@ -108,6 +108,7 @@ function checkLetter(button, letter) {
     return function () {
         button.style.backgroundColor = "black";
         button.isClicked = true;
+        guesses++;
         if (!wordChoice.includes(letter)) { // if letter does not exist in word
             incMistakes();
             incHangman();
