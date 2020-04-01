@@ -107,6 +107,7 @@ function randomWord() {
 /** Checks whether the clicked letter exists in the word. */
 function checkLetter(button, letter) {
     return function () {
+        button.onclick = null;
         button.style.backgroundColor = "black";
         button.isClicked = true;
         guesses++;
