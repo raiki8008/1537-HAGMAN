@@ -40,9 +40,10 @@
 #hangmanImage {
     width: 60px;
     height: 69px;
+    background: url(/images/Spritesheet.png) 1 0;
 }
 
 #correctGuess {
-  
+        
 }
 
