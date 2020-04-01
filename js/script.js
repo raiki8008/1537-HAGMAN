@@ -138,7 +138,7 @@ function incMistakes() {
 /** check if the word has been guessed */
 function isGuessed(word, guesses) {
     for (let i = 0; i < word.length; i++) {
-        if (!guessedLetters.includes(word.charAt(i))) {
+        if (!guesses.includes(word.charAt(i))) {
             return false;
         }
     }
