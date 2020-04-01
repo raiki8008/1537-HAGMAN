@@ -14,28 +14,48 @@
 
     <body>
         <div class="container">
-            <div class="text-center" id="gameName">Hangman Game!</div>    
-            <div class="text-center"> 
-                <p> Please help our hangman out! Guess the word!</p> 
-                <P id="wordHint"> This is the text hint for the word </P>  
+            <div class="card" id="baseCard">
+                <div class="card-body">
+                    <div class="gameName">
+                        <h2 class="card-title" id="titleName">HAGman Game!</h2>
+                    </div>
+                    <div class="card" id="gameGuide">
+                        <h3 class="card-text">Please help our HAGman out! Guess the word!</h3>
+                        <h3 class="card-text" id="wordHint"> Text hint for the word</h3>
+                    </div>
+                    <div class="card" id="hangmanImage">
+                        <img class="card-img-top" src="/images/pathToYourImage.png" alt="Hangman image goes here">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card" id="wrongGuesses" id="leftFloat">
+                                Wrong Guesses: <span id="mistakes">0/7</span> 
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card" id="guessedLetters">
+                                Letters Guessed: <span id="guess">Guessed goes here</span> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="keyboard">
+                        keyboard goes here
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <a href="#!" class="btn btn-primary" id="reset">Reset</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card" >
+                                <a href="#!" class="btn btn-primary" id="endGame">End Game</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="float-left" id="wrongGuesses"> Wrong Guesses: <span id="mistakes">0</span> / <span> 7 </span></div>
-            <div class="text-center" id="hangmanImage">Image of hangman.</div>
-            <div class="text-center">
-                <div id="keyboard"></div>
-            </div>
-            <div class="text-center">
-                <button id="reset" onclick="reset()">Reset</button>
-            </div>
-            <div class="float-right">
-                <button id="endGame"> End Game</button>
-            </div>
-            
-        
         </div>
-        
-
-
     </body>
 
     <script src="js/script.js"></script>
