@@ -179,15 +179,18 @@ function revealLetter(letter) {
     // TODO: implement
 }
 
-/** ends the game and displays message to user */
+/** Ends the game and displays message to user */
 function gameOver() {
-    alert("GAME OVER. OUT OF TRIES.")
+    alert("GAME OVER. OUT OF TRIES.");
+    alert("The word was: " + wordChoice);
+    reset();
 }
 
-/** ends the game and displays message to user */
+/** Ends the game and displays message to user */
 function win() {
     // TODO: HAGman
     alert("Congratulations! You saved HAGman!");
+    reset();
 }
 
 /** resets the game */
