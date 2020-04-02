@@ -6,8 +6,13 @@ p {
     font-weight: bold;
 }
 
+#titleName {
+    color: white;
+}
+
 #baseCard {
-    background-color: lightseagreen;
+    background: rgb(24,78,104);
+    background: radial-gradient(circle, rgba(24,78,104,1) 0%, rgba(87,202,133,1) 100%);
 }
 
 #gameGuide {
@@ -30,29 +35,26 @@ p {
     width: 60px;
     height: 69px;
 }
-
-#wrongGuesses {
+#buttonStyle {
     
+}
+
+#keyBoardBack {
+    padding: 10px;
+    background-color: black;
 }
 
 #leftFloat {
     float: left;
 }
 
-#guessedLetters {
-        
-}
-
-
-#keyboard {
-   
-}
-
 #reset {
-    background-color: royalblue;
+    background: rgb(18,25,214);
+    background: radial-gradient(circle, rgba(18,25,214,1) 0%, rgba(18,137,214,1) 100%);
 }
 
 #endGame {
-    background-color: rgb(226, 9, 9, 0.842);
+    background: rgb(214,18,18);
+    background: radial-gradient(circle, rgba(214,18,18,1) 0%, rgba(214,80,18,1) 100%);
 }
 

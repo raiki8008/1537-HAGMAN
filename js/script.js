@@ -82,13 +82,13 @@ function Button(letter) {
     // random styling to make the keys look nicer
     this.btn.style.border = "1px solid black";
     this.btn.style.float = "center";
-    this.btn.style.padding = "10px 10px";
+    this.btn.style.padding = "10px 14px";
     this.btn.style.textAlign = "center"
     this.btn.style.textDecoration = "none";
     this.btn.style.display = "inline-block";
     this.btn.style.fontSize = "16px";
+    this.btn.style.backgroundColor = "white";
 
-    // TODO: fix keyboard so that it doesnt just append vertically
     document.getElementById("keyboard").appendChild(this.btn);
 
     // click handler
@@ -237,7 +237,7 @@ function reset() {
     mistakes = 0;
     spriteCurrent = 60;
 
-    mistakesText.innerHTML = "0/7";
+    mistakesText.innerHTML = "0 out of 7";
     hangmanImage.style.background = "";
 }
 
