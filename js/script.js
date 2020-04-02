@@ -219,23 +219,26 @@ function revealLetter() {
 function gameOver() {
     alert("GAME OVER. OUT OF TRIES.");
     alert("The word was: " + wordChoice);
-    reset();
+    location.reload();
 }
 
 /** Ends the game and displays message to user */
 function win() {
     // TODO: HAGman
     alert("Congratulations! You saved HAGman!");
-    reset();
+    location.reload();
 }
 
 /** resets the game */
 function reset() {
+    let hangmanImage = document.getElementById("hangmanImage");
     let mistakesText = document.getElementById("mistakes");
 
     mistakes = 0;
+    spriteCurrent = 60;
 
-    mistakesText.innerHTML = mistakes + "/7";
+    mistakesText.innerHTML = "0/7";
+    hangmanImage.style.background = "";
 }
 
 
