@@ -231,7 +231,11 @@ function win() {
 
 /** resets the game */
 function reset() {
-    location.reload();
+    let mistakesText = document.getElementById("mistakes");
+
+    mistakes = 0;
+
+    mistakesText.innerHTML = mistakes + "/7";
 }
 
 
