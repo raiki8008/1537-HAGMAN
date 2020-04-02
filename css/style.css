@@ -47,3 +47,11 @@
         
 }
 
+#keyboard {
+    text-align: center;
+}
+
+#wordHint {
+    color: red;
+}
+
