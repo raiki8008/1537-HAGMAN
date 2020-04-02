@@ -172,7 +172,7 @@ function incMistakes() {
 
     mistakes++;
 
-    mistakesText.innerHTML = mistakes + "/7";
+    mistakesText.innerHTML = mistakes + " out of 7";
     if (mistakes === MAX_TRIES) {
         gameOver();
     }
