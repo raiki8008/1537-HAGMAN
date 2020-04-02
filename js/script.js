@@ -163,7 +163,7 @@ function incHangman() {
 
     spriteCurrent -= SPRITE_WIDTH;
 
-    hangmanImage.style.background = "url(/images/Spritesheet.png) " + spriteCurrent + "px 0";
+    hangmanImage.style.background = "url(images/Spritesheet.png) " + spriteCurrent + "px 0";
 }
 
 /** Increments user mistakes by 1 and calls gameOver if tries reach 7 */
