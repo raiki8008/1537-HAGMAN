@@ -4,11 +4,14 @@
 
 #baseCard {
   background-image: linear-gradient(to bottom right, red, white);
+p {
+    font-weight: bold;
 }
 
-#leftFloat {
-    float: left;
+#baseCard {
+    background-color: lightseagreen;
 }
+<<<<<<< HEAD
 #gameName {
     background-image: rgb(8, 124, 201);
     color: white;
@@ -21,16 +24,19 @@
     border-width: 2px;
     border-style: solid;
 }
+=======
+>>>>>>> 0ca52bfac1549ab5e5e42e4d8b9d475cec817e3e
 
-
-#gameGuide, #wordHint {
+#gameGuide {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     padding: 5px ;
 }
-
-#wrongGuesses {
-    text-align: left;
+#wordHint {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    padding: 5px ;
+    color: red;
 }
 
 #hangmanImageDiv {
@@ -42,15 +48,28 @@
     height: 69px;
 }
 
-#correctGuess {
+#wrongGuesses {
+    
+}
+
+#leftFloat {
+    float: left;
+}
+
+#guessedLetters {
         
 }
 
+
 #keyboard {
-    text-align: center;
+   
 }
 
-#wordHint {
-    color: red;
+#reset {
+    background-color: royalblue;
+}
+
+#endGame {
+    background-color: rgb(226, 9, 9, 0.842);
 }
 
