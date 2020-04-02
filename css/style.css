@@ -3,15 +3,15 @@
 }
 
 #baseCard {
-    background-color: lightseagreen;
+  background-image: linear-gradient(to bottom right, red, white);
 }
 
 #leftFloat {
     float: left;
 }
-/*#gameName {
-    /*background-image: linear-gradient(to bottom right, red, yellow);*/
-    /*color: white;
+#gameName {
+    background-image: rgb(8, 124, 201);
+    color: white;
     background-color: rgb(8, 124, 201);
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -20,7 +20,7 @@
     border: blue;
     border-width: 2px;
     border-style: solid;
-}*/
+}
 
 
 #gameGuide, #wordHint {
