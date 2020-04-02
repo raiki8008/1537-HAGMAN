@@ -2,6 +2,8 @@
     text-align: center;  
 }
 
+#baseCard {
+  background-image: linear-gradient(to bottom right, red, white);
 p {
     font-weight: bold;
 }
@@ -14,6 +16,21 @@ p {
     background: rgb(24,78,104);
     background: radial-gradient(circle, rgba(24,78,104,1) 0%, rgba(87,202,133,1) 100%);
 }
+<<<<<<< HEAD
+#gameName {
+    background-image: rgb(8, 124, 201);
+    color: white;
+    background-color: rgb(8, 124, 201);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    padding: 10px ;
+    border: blue;
+    border-width: 2px;
+    border-style: solid;
+}
+=======
+>>>>>>> 0ca52bfac1549ab5e5e42e4d8b9d475cec817e3e
 
 #gameGuide {
     font-family: Arial, Helvetica, sans-serif;
