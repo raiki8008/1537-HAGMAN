@@ -81,7 +81,7 @@ function Button(letter) {
 
     // random styling to make the keys look nicer
     this.btn.style.border = "1px solid black";
-    this.btn.style.float = "left";
+    this.btn.style.float = "center";
     this.btn.style.padding = "10px 10px";
     this.btn.style.textAlign = "center"
     this.btn.style.textDecoration = "none";
