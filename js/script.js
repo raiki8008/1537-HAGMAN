@@ -54,6 +54,8 @@ let mistakes = 0;
 let guesses = 0;
 /** An array of guessed letters. */
 let guessedLetters = [];
+/** An array of correctly-guessed letters. */
+let correctLetters = [];
 /** Current sprite left position */
 let spriteCurrent = 60;
 
@@ -102,12 +104,22 @@ function Button(letter) {
 function randomWord() {
     let wordHint = document.getElementById("wordHint");
     let randomWord = Math.floor(Math.random() * WORDS.length);
-    
+
     wordChoice = WORDS[randomWord];
     wordHint.innerHTML = DEFINITIONS[randomWord];
 
     // TODO: remove the line below
     console.log(wordChoice); // for TESTING
+}
+
+function setGuessed() {
+    let guessed = document.getElementById("guess");
+
+    guessed.innerHTML = "";
+
+    for (let i = 0; i < wordChoice.length; i++) {
+        guessed.innerHTML += "_ ";
+    }
 }
 
 /** Checks whether the clicked letter exists in the word. */
@@ -123,9 +135,11 @@ function checkLetter(button, letter) {
             incHangman();
             guessedLetters.push(letter);
             return alert("Wrong!");
-        } else { // letter does exist in word
-            revealLetter(letter);
+        } else { // letter does exist in wor
+            correctLetters.push(letter);
             guessedLetters.push(letter);
+
+            revealLetter();
 
             if (isGuessed(wordChoice, guessedLetters)) {
                 win();
@@ -175,8 +189,30 @@ function isGuessed(word, guesses) {
 }
 
 /** Reveals a letter of the random word (user guessed correct) */
-function revealLetter(letter) {
-    // TODO: implement
+function revealLetter() {
+    let counter;
+    let letter;
+    let guessed = document.getElementById("guess");
+
+    guessed.innerHTML = "";
+
+    for (let i = 0; i < wordChoice.length; i++) {
+        counter = 0;
+
+        for (let j = 0; j < correctLetters.length; j++) {
+            if (wordChoice.charAt(i) == correctLetters[j]) {
+                letter = wordChoice.charAt(i);
+                counter++;
+            }
+        }
+        
+        if (counter > 0) {
+            guessed.innerHTML += letter + " ";
+        } else {
+            guessed.innerHTML += "_ ";
+        }
+        console.log(guessed.innerHTML);
+    }
 }
 
 /** Ends the game and displays message to user */
@@ -202,5 +238,7 @@ function reset() {
 //======================//
 // Main()               //
 //======================//
+
 createButtons();
 randomWord();
+setGuessed();
