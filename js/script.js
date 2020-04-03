@@ -78,16 +78,7 @@ function Button(letter) {
     this.btn.innerHTML = letter;
     this.btn.style.width = WIDTH;
     this.btn.style.height = HEIGHT;
-
-    // random styling to make the keys look nicer
-    this.btn.style.border = "1px solid black";
-    this.btn.style.float = "center";
-    this.btn.style.padding = "10px 14px";
-    this.btn.style.textAlign = "center"
-    this.btn.style.textDecoration = "none";
-    this.btn.style.display = "inline-block";
-    this.btn.style.fontSize = "16px";
-    this.btn.style.backgroundColor = "white";
+    this.btn.setAttribute("class", "keyboardStyle");
 
     document.getElementById("keyboard").appendChild(this.btn);
 

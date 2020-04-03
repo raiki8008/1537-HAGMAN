@@ -40,6 +40,19 @@ p {
     height: 69px;
 }
 
+.keyboardStyle {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: white; 
+}
+
 #keyBoardBack {
     padding: 10px;
     background-color: black;
