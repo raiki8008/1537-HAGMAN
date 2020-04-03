@@ -56,8 +56,11 @@ let guesses = 0;
 let guessedLetters = [];
 /** An array of correctly-guessed letters. */
 let correctLetters = [];
-/** Current sprite left position */
+/** Current sprite left position. */
 let spriteCurrent = 60;
+/** The user's score. */
+let score = "";
+
 
 //======================//
 // HTML DOM Elements    //
@@ -119,11 +122,13 @@ function checkLetter(button, letter) {
         guesses++;
 
         if (!wordChoice.includes(letter)) { // if letter does not exist in word
-            incMistakes();
             incHangman();
             guessedLetters.push(letter);
-            return alert("Wrong!");
-        } else { // letter does exist in wor
+            incMistakes();
+            if (mistakes != MAX_TRIES) {
+                return alert("Wrong!");
+            }
+        } else { // letter does exist in word
             correctLetters.push(letter);
             guessedLetters.push(letter);
 
@@ -206,26 +211,30 @@ function revealLetter() {
 function gameOver() {
     alert("GAME OVER. OUT OF TRIES.");
     alert("The word was: " + wordChoice);
-    location.reload();
+
+    endGame();
 }
 
 /** Ends the game and displays message to user */
 function win() {
     // TODO: HAGman
     alert("Congratulations! You saved HAGman!");
-    location.reload();
+    alert("The word was: " + wordChoice);
+
+    endGame();
 }
 
 /** resets the game */
 function reset() {
-    let hangmanImage = document.getElementById("hangmanImage");
-    let mistakesText = document.getElementById("mistakes");
+    location.reload();
+}
 
-    mistakes = 0;
-    spriteCurrent = 60;
-
-    mistakesText.innerHTML = "0 out of 7";
-    hangmanImage.style.background = "";
+/** prompts user to enter name and displays score */
+function endGame(){
+    let playerName = prompt("What is your name?", "Amir");
+    score = mistakes + " lives";
+    alert(playerName + ", you lost " + score + "!");
+    location.reload();
 }
 
 
