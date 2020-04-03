@@ -98,7 +98,7 @@ function Button(letter) {
 function randomWord() {
     let wordHint = document.getElementById("wordHint");
     let randomWord = Math.floor(Math.random() * WORDS.length);
-
+    
     wordChoice = WORDS[randomWord];
     wordHint.innerHTML = DEFINITIONS[randomWord];
 }
@@ -109,7 +109,11 @@ function setGuessed() {
     guessed.innerHTML = "";
 
     for (let i = 0; i < wordChoice.length; i++) {
-        guessed.innerHTML += "_ ";
+        if (wordChoice.charAt(i) == " ") {
+            guessed.innerHTML += "&nbsp&nbsp";
+        } else {
+            guessed.innerHTML += "_ ";
+        }
     }
 }
 
@@ -173,6 +177,8 @@ function incMistakes() {
 
 /** check if the word has been guessed */
 function isGuessed(word, guesses) {
+    word = word.replace(" ", "");
+
     for (let i = 0; i < word.length; i++) {
         if (!guesses.includes(word.charAt(i))) {
             return false;
@@ -195,12 +201,19 @@ function revealLetter() {
         for (let j = 0; j < correctLetters.length; j++) {
             if (wordChoice.charAt(i) == correctLetters[j]) {
                 letter = wordChoice.charAt(i);
+
+                if (wordChoice.charAt(i) == " ") {
+                    letter = "&nbsp";
+                }
+
                 counter++;
             }
         }
         
         if (counter > 0) {
             guessed.innerHTML += letter + " ";
+        } else if (wordChoice.charAt(i) == " ") {
+            guessed.innerHTML += "&nbsp&nbsp";
         } else {
             guessed.innerHTML += "_ ";
         }
