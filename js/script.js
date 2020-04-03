@@ -107,9 +107,6 @@ function randomWord() {
 
     wordChoice = WORDS[randomWord];
     wordHint.innerHTML = DEFINITIONS[randomWord];
-
-    // TODO: remove the line below
-    console.log(wordChoice); // for TESTING
 }
 
 function setGuessed() {
@@ -211,7 +208,6 @@ function revealLetter() {
         } else {
             guessed.innerHTML += "_ ";
         }
-        console.log(guessed.innerHTML);
     }
 }
 
